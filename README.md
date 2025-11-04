@@ -2,7 +2,9 @@
 
 A Model Context Protocol (MCP) server that provides programmatic access to your Obsidian vault. This server enables AI assistants and other MCP clients to read, write, edit, and search markdown notes in your Obsidian vault.
 
+<div align="center">
 <img src="image.png" alt="Obsidian MCP Server Icon" width="128" height="128">
+</div>
 
 Built with a clean, modular architecture following separation of concerns principles for maintainability and extensibility.
 
