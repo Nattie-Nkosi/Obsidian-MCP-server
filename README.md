@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that provides programmatic access to your Obsidian vault. This server enables AI assistants and other MCP clients to read, write, edit, and search markdown notes in your Obsidian vault.
 
+<img src="image.png" alt="Obsidian MCP Server Icon" width="128" height="128">
+
 Built with a clean, modular architecture following separation of concerns principles for maintainability and extensibility.
 
 ## Features
@@ -98,6 +100,7 @@ This server uses stdio transport and can be integrated with any MCP client. Add 
 ### Example Client Integrations
 
 **Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+
 ```json
 {
   "mcpServers": {
@@ -113,6 +116,7 @@ This server uses stdio transport and can be integrated with any MCP client. Add 
 ```
 
 **Windows** (`%APPDATA%\Claude\claude_desktop_config.json`):
+
 ```json
 {
   "mcpServers": {
@@ -130,47 +134,59 @@ This server uses stdio transport and can be integrated with any MCP client. Add 
 ## Available Tools
 
 ### `write_note`
+
 Create a new note or overwrite an existing one.
 
 **Parameters:**
+
 - `path` (string): Relative path within vault (e.g., `folder/note.md`)
 - `content` (string): The markdown content
 
 ### `edit_note`
+
 Edit an existing note by replacing specific text.
 
 **Parameters:**
+
 - `path` (string): Relative path to the note
 - `find` (string): Text to find
 - `replace` (string): Text to replace with
 
 ### `append_note`
+
 Append content to an existing note.
 
 **Parameters:**
+
 - `path` (string): Relative path to the note
 - `content` (string): Content to append
 
 ### `read_note`
+
 Read the content of a specific note.
 
 **Parameters:**
+
 - `path` (string): Relative path to the note
 
 ### `list_notes`
+
 List all notes in the vault with their paths.
 
 **Parameters:** None
 
 ### `search_notes`
+
 Search for notes containing specific text (case-insensitive).
 
 **Parameters:**
+
 - `query` (string): Text to search for
 
 ## Resources
 
 All markdown files in your vault are exposed as MCP resources with:
+
 - **URI**: `obsidian://{relative-path}`
 - **MIME Type**: `text/markdown`
 - **Name**: The filename
