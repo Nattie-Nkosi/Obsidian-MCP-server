@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  obsidian-mcp-server:
+    build: .
+    container_name: obsidian-mcp-server
+    restart: always
+    environment:
+      - OBSIDIAN_VAULT_PATH=/vault
+    volumes:
+      - "./vault:/vault"
+    stdin_open: true
+    tty: true

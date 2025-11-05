@@ -49,3 +49,6 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+# Docker override with personal paths
+docker-compose.override.yml
